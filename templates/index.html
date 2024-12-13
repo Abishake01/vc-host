@@ -3,38 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Call</title>
+  <title>Responsive Video Call</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
   <div class="flex flex-col h-full">
-    <!-- Header -->
+ 
     <header class="flex justify-between items-center bg-white px-6 py-4 shadow-md">
       <div class="text-lg font-bold">Rajan</div>
-      
     </header>
 
-    <!-- Main Content -->
-    <main class="flex flex-1">
-      <!-- Video Section -->
-      <section class="flex-1 grid grid-cols-2 gap-4 p-6">
-        <!-- Participant 1 -->
+ 
+    <main class="flex flex-1 flex-col lg:flex-row">
+       
+      <section class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+        
         <div class="relative bg-gray-300 rounded-lg overflow-hidden">
-          <video id="localVideo" autoplay muted src="participant1.jpg" alt="Participant 1" class="w-full h-96 object-cover">
+          <video id="localVideo" autoplay muted class="w-full h-56 sm:h-64 md:h-80 lg:h-96 object-cover"></video>
         </div>
 
-        <!-- Participant 2 -->
+        
         <div class="relative bg-gray-300 rounded-lg overflow-hidden">
-          <video id="remoteVideo" autoplay src="participant2.jpg" alt="Participant 2" class="w-full h-96 object-cover">
-          
+          <video id="remoteVideo" autoplay class="w-full h-56 sm:h-64 md:h-80 lg:h-96 object-cover"></video>
         </div>
       </section>
 
-      <!-- Right Sidebar -->
-      <aside class="w-1/4 bg-white border-l border-gray-300 flex flex-col p-4">
+  
+      <aside class="w-full lg:w-1/4 bg-white border-t lg:border-t-0 lg:border-l border-gray-300 flex flex-col p-4">
         <h3 class="text-lg font-bold mb-4">Chat</h3>
         <div class="flex-1 overflow-y-auto space-y-4">
-          <!-- Messages -->
           <div class="text-sm">
             <div class="text-gray-700"><strong>Nagi:</strong> Hey, can you hear me?</div>
             <div class="text-gray-500">10:01 AM</div>
@@ -51,13 +48,13 @@
       </aside>
     </main>
 
-    <!-- Bottom Controls -->
-    <footer class="bg-white px-6 py-4 shadow-md flex justify-center gap-6">
-      <button onclick="startCall()" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md"> Start Call</button>
-      <button onclick="endCall()" class="px-4 py-2 bg-red-500 text-white hover:bg-red-600 rounded-md"> End Call</button>
-     
-    </footer>
+     <div class="bg-white px-6 py-4 shadow-md flex justify-center gap-4 flex-wrap">
+      <button onclick="startCall()" class="px-4 py-2 bg-green-500 hover:bg-green-400 rounded-md text-white">Start Call</button>
+      <button onclick="endCall()" class="px-4 py-2 bg-red-500 hover:bg-red-600 rounded-md text-white">End Call</button>
+    </div>
   </div>
+
+
   <script>
     const localVideo = document.getElementById('localVideo');
     const remoteVideo = document.getElementById('remoteVideo');
